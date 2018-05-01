@@ -1,4 +1,4 @@
-{% set version = '1.9-72' %}
+{% set version = '1.9-73' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,24 +12,17 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/pcaPP_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/pcaPP/pcaPP_{{ version }}.tar.gz
-  sha256: 58bd0bfb5931aecd734801654bac95f28dab6d30fd043c66c5b719b497104844
-
-
-  # patches:
-   # List any patch files here
-   # - fix.patch
+  sha256: ca4566b0babfbe83ef9418283b08a12b3420dc362f93c6562f265df7926b53fc
 
 build:
   merge_build_host: True  # [win]
   # If this is a new build for the same version, increment the build number.
   number: 0
 
-
   # This is required to make R link correctly on Linux.
   rpaths:
     - lib/R/lib/
     - lib/
-
 
 requirements:
   build:
@@ -77,8 +70,8 @@ extra:
 # The original CRAN metadata for this package was:
 
 # Package: pcaPP
-# Version: 1.9-72
-# Date: 2017-06-27
+# Version: 1.9-73
+# Date: 2018-01-04
 # Title: Robust PCA by Projection Pursuit
 # Author: Peter Filzmoser, Heinrich Fritz, Klaudius Kalcher
 # Maintainer: Valentin Todorov <valentin.todorov@chello.at>
@@ -87,8 +80,8 @@ extra:
 # License: GPL (>= 3)
 # NeedsCompilation: yes
 # Repository: CRAN
-# Packaged: 2017-06-27 15:36:56 UTC; TodorovV
-# Date/Publication: 2017-06-27 21:53:35 UTC
+# Packaged: 2018-01-05 06:39:02 UTC; TodorovV
+# Date/Publication: 2018-01-14 18:27:29 UTC
 
 # See
 # http://docs.continuum.io/conda/build.html for
