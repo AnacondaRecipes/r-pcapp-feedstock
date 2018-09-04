@@ -8,7 +8,6 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: pcaPP_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/pcaPP_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/pcaPP/pcaPP_{{ version }}.tar.gz
@@ -31,17 +30,18 @@ requirements:
     - {{native}}toolchain        # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}make
+    - {{posix}}sed               # [win]
+    - {{posix}}coreutils         # [win]
+    - {{posix}}zip               # [win]
 
   host:
     - r-base
     - r-mvtnorm
-    - libopenblas                # [osx]
 
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
     - r-mvtnorm
-    - libopenblas                # [osx]
 
 test:
   commands:
